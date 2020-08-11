@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.firebase.codelab.friendlychat;
+package com.google.firebase.hibar3.mychatapp;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -50,7 +50,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
@@ -71,7 +71,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         mFirebaseAuth = FirebaseAuth.getInstance();
     }
 
-        private void signIn() {
+    private void signIn() {
         Intent signInIntent = mSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
@@ -83,24 +83,24 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                 signIn();
                 break;
         }
-     }
+    }
 
-     @Override
-     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-     super.onActivityResult(requestCode, resultCode, data);
-     
-     // Result returned from launching the Intent in signIn()
-     if (requestCode == RC_SIGN_IN) {
-        Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-        try {
-            // Google Sign In was successful, authenticate with Firebase
-            GoogleSignInAccount account = task.getResult(ApiException.class);
-            firebaseAuthWithGoogle(account);
-        } catch (ApiException e) {
-            // Google Sign In failed, update UI appropriately
-            Log.w(TAG, "Google sign in failed", e);
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // Result returned from launching the Intent in signIn()
+        if (requestCode == RC_SIGN_IN) {
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            try {
+                // Google Sign In was successful, authenticate with Firebase
+                GoogleSignInAccount account = task.getResult(ApiException.class);
+                firebaseAuthWithGoogle(account);
+            } catch (ApiException e) {
+                // Google Sign In failed, update UI appropriately
+                Log.w(TAG, "Google sign in failed", e);
+            }
         }
-      }
     }
 
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
@@ -111,7 +111,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Log.d(TAG, "signInWithCredential:onComplete:" + task.isSuccessful());
-    
+
                         // If sign in fails, display a message to the user. If sign in succeeds
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.

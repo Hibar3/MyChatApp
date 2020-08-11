@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.firebase.codelab.friendlychat;
+package com.google.firebase.hibar3.mychatapp;
 
 
 import androidx.test.filters.LargeTest;
