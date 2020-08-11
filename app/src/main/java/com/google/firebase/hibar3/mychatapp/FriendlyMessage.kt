@@ -13,24 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.google.firebase.hibar3.mychatapp
 
-package com.google.firebase.codelab.friendlychat;
+class FriendlyMessage {
+    var id: String? = null
+    var text: String? = null
+    var name: String? = null
+    var photoUrl: String? = null
+    var imageUrl: String? = null
 
+    constructor() {}
+    constructor(text: String?, name: String?, photoUrl: String?, imageUrl: String?) {
+        this.text = text
+        this.name = name
+        this.photoUrl = photoUrl
+        this.imageUrl = imageUrl
+    }
 
-import androidx.test.filters.LargeTest;
-import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner;
-import androidx.test.rule.ActivityTestRule;
-
-import org.junit.Rule;
-import org.junit.runner.RunWith;
-
-@RunWith(AndroidJUnit4ClassRunner.class)
-@LargeTest
-public class MainActivityEspressoTest {
-
-    @Rule
-    public ActivityTestRule<MainActivity> mActivityRule =
-            new ActivityTestRule<>(MainActivity.class);
-
-    // Add instrumentation test here
 }
