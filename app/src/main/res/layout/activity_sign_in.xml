@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
              android:id="@+id/sign_in_layout"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
@@ -9,18 +11,76 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:textStyle="bold"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="40dp"
-        android:text="@string/sign_in"/>
+        android:text="Login"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        tools:text="Login" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="181dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="8dp"
+        android:background="@android:color/background_light"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="181dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="8dp"
+        android:background="@android:color/white"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="140dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Login"
+        android:textColor="#FBFBFB" />
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/sign_in_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
         android:layout_centerInParent="true"
-        android:visibility="visible"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:visibility="visible">
+
+    </com.google.android.gms.common.SignInButton>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="28dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="205dp"
+        android:layout_marginEnd="8dp"
+        android:text="Or"
+        tools:text="Or" />
+
+
 
 </FrameLayout>
